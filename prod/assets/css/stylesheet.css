@@ -1,0 +1,125 @@
+.container-sidebar {
+    background: #00adb5;
+}
+
+.container-main-content {
+    background: #222831;
+}
+
+.container-navbar, .content-group .group-actions .shortcuts,
+.content-group .group-actions .alerts {
+    background: #393e46;
+}
+
+.sidebar-list .item .link, .container-breadcrumb .item .link, .content-group {
+    color: #eeeeee;
+}
+
+.sidebar-list .item .link, .container-breadcrumb .item .link {
+    font-size: 1.2em;
+}
+
+.content-group .group-title, .content-group .group-actions .shortcuts-title,
+.content-group .group-actions .alerts-title {
+    font-size: 1.7em;
+}
+
+.content-group .group-actions .shortcuts-title,
+.content-group .group-actions .alerts-title {
+    padding: 10px 0;
+}
+
+.content-group .group-actions .shortcuts,
+.content-group .group-actions .alerts {
+    margin: 0 10px;
+}
+
+.content-group .group-actions .shortcuts,
+.content-group .group-actions .alerts {
+    padding: 20px;
+}
+
+.content-group .group-actions .divider {
+    margin: 20px 0;
+}
+
+.content-group .group-actions {
+    padding: 40px 0;
+}
+
+.content-group .group-title {
+    padding-top: 40px;
+}
+
+.container-content {
+    padding: 40px;
+}
+
+.sidebar-list .item {
+    border-bottom: 1px solid #393e46;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    display: flex;
+}
+
+.sidebar-list .item .link {
+    text-decoration: none;
+}
+
+.container-main-content {
+    flex: 0 0 75%;
+}
+
+.container-view {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-app {
+    display: flex;
+    height: 100%;
+}
+
+.container-navbar {
+    min-height: 100px;
+}
+
+.container-sidebar {
+    height: 100%;
+    flex: 0 0 25%;
+}
+
+.container-breadcrumb .item {
+    display: inline-block;
+}
+
+.container-breadcrumb .item .link {
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.container-breadcrumb .item:not(:last-child) .link::after {
+    margin: 0 15px;
+    content: '>';
+}
+
+.content-group {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.content-group .group-title {
+    flex: 0 0 100%;
+}
+
+.content-group .group-actions {
+    flex: 0 0 100%;
+    display: flex;
+}
+
+.content-group .group-actions .shortcuts,
+    .content-group .group-actions .alerts {
+    flex: 0 0 44%;
+}

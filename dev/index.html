@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="gestao-app">
+  <head>
+    <meta charset="utf-8">
+    <title>SRM Gestão</title>
+
+    <!-- CSS -->
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <!-- JS Imports -->
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/angular.min.js"></script>
+
+    <!-- Main -->
+    <script src="./assets/js/core.js"></script>
+
+  </head>
+  <body class="container-view" ng-controller="gestao-app-controller">
+    <div class="container-app">
+      <nav class="container-sidebar">
+        <ul class="sidebar-list">
+          <li class="item" ng-repeat='item in arrSidebar'>
+            <a class="link" href="#" >{{ item.text }}</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container-main-content">
+        <nav class="container-navbar">
+          <li><h2 class="navbar-logo"></h2></li>
+        </nav>
+        <div class="container-content">
+          <ul class="container-breadcrumb">
+            <li class="item"><a class='link' href='#'> Página Inicial </a></li>
+            <li class="item"><a class='link' href='#'> Painel de Gestão </a></li>
+          </ul>
+          <div class="content-group">
+            <h1 class="group-title">Painel de Gestão</h1>
+            <div class="group-actions">
+              <div class="shortcuts">
+                <h2 class="shortcuts-title">Atalhos</h2>
+                <hr class="divider">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet omnis tempore rerum. Dolorem quam eaque eos. Doloremque harum sunt quod consectetur nostrum rerum earum enim voluptates, ratione quasi, corporis nihil.</p>
+              </div>
+              <div class="alerts">
+                <h2 class="shortcuts-title">Alertas</h2>
+                <hr class="divider">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis recusandae, accusamus eius, numquam, veritatis labore perferendis officia molestias quia debitis esse possimus deleniti. Sed, eaque praesentium, nam iste reiciendis assumenda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

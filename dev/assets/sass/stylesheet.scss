@@ -1,0 +1,158 @@
+// --- SETUP
+
+$colors: (
+  'sidebar': #00adb5,
+  'content': #222831,
+  'navbar': #393e46,
+  'text': #eeeeee
+);
+
+$fonts: (
+  'font-small': 1.2em,
+  'font-medium': 1.4em,
+  'font-big': 1.7em,
+);
+
+@each $color, $value in $colors {
+  %bg-#{$color} { background: $value; }
+  %cl-#{$color} { color: $value; }
+}
+
+@each $font, $value in $fonts {
+  %#{$font} { font-size: $value; }
+}
+
+@for $i from 1 through 20 {
+  %pad-bottom-#{$i * 5} { padding-bottom: $i * 5px; }
+  %pad-right-#{$i * 5} { padding-right: $i * 5px; }
+  %pad-left-#{$i * 5} { padding-left: $i * 5px; }
+  %pad-bothH-#{$i * 5} { padding: 0 $i * 5px; }
+  %pad-bothV-#{$i * 5} { padding: $i * 5px 0; }
+  %pad-top-#{$i * 5} { padding-top: $i * 5px; }
+  %pad-#{$i * 5} { padding: $i * 5px; }
+
+  %mg-bottom-#{$i * 5} { margin-bottom: $i * 5px; }
+  %mg-right-#{$i * 5} { margin-right: $i * 5px; }
+  %mg-left-#{$i * 5} { margin-left: $i * 5px; }
+  %mg-bothH-#{$i * 5} { margin: 0 $i * 5px; }
+  %mg-bothV-#{$i * 5} { margin: $i * 5px 0; }
+  %mg-top-#{$i * 5} { margin-top: $i * 5px; }
+  %mg-#{$i * 5} { margin: $i * 5px; }
+}
+
+// --- SETUP END
+
+// --- SASS
+
+.sidebar-list {
+  .item {
+    border-bottom: 1px solid map-get($colors, 'navbar');
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    display: flex;
+    .link {
+      @extend %font-small;
+      @extend %cl-text;
+
+      text-decoration: none;
+    }
+  }
+}
+
+.container {
+
+  &-content { @extend %pad-40; }
+
+  &-main-content {
+    @extend %bg-content;
+
+    flex: 0 0 75%;
+  }
+
+  &-view {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-app {
+    display: flex;
+    height: 100%;
+  }
+
+  &-navbar {
+    @extend %bg-navbar;
+    min-height: 100px;
+  }
+
+  &-sidebar {
+    @extend %bg-sidebar;
+
+    height: 100%;
+    flex: 0 0 25%;
+  }
+
+  &-breadcrumb {
+    .item {
+      display: inline-block;
+
+      .link {
+        @extend %font-small;
+        @extend %cl-text;
+
+        text-decoration: none;
+        pointer-events: none;
+      }
+
+      &:not(:last-child) {
+        .link::after {
+          margin: 0 15px;
+          content: '>';
+        }
+      }
+    }
+  }
+
+}
+
+.content-group {
+  @extend %cl-text;
+
+  flex-wrap: wrap;
+  display: flex;
+
+  .group-title {
+    @extend %pad-top-40;
+    @extend %font-big;
+
+    flex: 0 0 100%;
+  }
+
+  .group-actions {
+    @extend %pad-bothV-40;
+
+    flex: 0 0 100%;
+    display: flex;
+
+    .divider { @extend %mg-bothV-20; }
+
+    .shortcuts,
+    .alerts {
+      @extend %mg-bothH-10;
+      @extend %bg-navbar;
+      @extend %pad-20;
+
+      flex: 0 0 44%;
+
+      &-title {
+        @extend %pad-bothV-10;
+        @extend %font-big;
+      }
+    }
+
+
+  }
+}
+
+// --- SASS END
