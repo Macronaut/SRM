@@ -20,14 +20,23 @@
     <div class="container-app">
       <nav class="container-sidebar">
         <ul class="sidebar-list">
-          <li class="item" ng-repeat='item in arrSidebar'>
-            <a class="link" href="#" >{{ item.text }}</a>
+          <li class="item" ng-repeat="item in arrSidebar">
+            <input class="input" ng-if="item.isFilter" type="text" name="" value="{{ item.text }}">
+            <a ng-if="!item.isFilter" class="link {{ item.icon }} {{ item.after }}" ng-class="{ 'active': item.isActive }" href="#" >{{ item.text }}</a>
           </li>
         </ul>
       </nav>
       <div class="container-main-content">
         <nav class="container-navbar">
-          <li><h2 class="navbar-logo"></h2></li>
+          <ul class="navbar-list">
+            <li class="item"><h2 class="navbar-logo">SRM</h2></li>
+            <li class="item flex">
+              <span class="text">Grupo Econômico:</span>
+              <div class="menu">Visão Agregada 1</div>
+              <div class="user">Sandra Oliveira</div>
+              <div class="alert">!</div>
+            </li>
+          </ul>
         </nav>
         <div class="container-content">
           <ul class="container-breadcrumb">
@@ -35,17 +44,43 @@
             <li class="item"><a class='link' href='#'> Painel de Gestão </a></li>
           </ul>
           <div class="content-group">
-            <h1 class="group-title">Painel de Gestão</h1>
+            <ul class="content-list">
+              <li class="item"><h1 class="group-title">Painel de Gestão</h1></li>
+              <li class="item"><span class="content-title">Produto: </span> <span class="box">Todos</span></li>
+            </ul>
             <div class="group-actions">
               <div class="shortcuts">
-                <h2 class="shortcuts-title">Atalhos</h2>
+                  <h2 class="shortcuts-title">Atalhos</h2>
                 <hr class="divider">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet omnis tempore rerum. Dolorem quam eaque eos. Doloremque harum sunt quod consectetur nostrum rerum earum enim voluptates, ratione quasi, corporis nihil.</p>
+                  <div class="shortcuts-container">
+
+                    <ul class="shortcuts-list">
+                      <h2 class="title">Operacional</h2>
+                      <li class="item" ng-repeat="text in arrShortcuts.operacional">
+                        <p>{{ text }}</p>
+                      </li>
+                    </ul>
+
+                    <ul class="shortcuts-list">
+                      <h2 class="title">Geral</h2>
+                      <li class="item" ng-repeat="text in arrShortcuts.geral">
+                        <p>{{ text }}</p>
+                      </li>
+                    </ul>
+
+                  </div>
               </div>
               <div class="alerts">
-                <h2 class="shortcuts-title">Alertas</h2>
+                <ul class="alerts-title-list">
+                  <li class="title-item"><h2 class="alerts-title">Alertas</h2></li>
+                  <li><span>Últimos 5 dias</span></li>
+                </ul>
                 <hr class="divider">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis recusandae, accusamus eius, numquam, veritatis labore perferendis officia molestias quia debitis esse possimus deleniti. Sed, eaque praesentium, nam iste reiciendis assumenda.</p>
+                  <ul class="alerts-list">
+                    <li class="item" ng-repeat="object in arrAlerts">
+                      <p class="content">{{ object.text }} <span class="box" ng-if="object.isAction">Ações</span></p>
+                    </li>
+                  </ul>
               </div>
             </div>
           </div>
